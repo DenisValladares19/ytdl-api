@@ -1,6 +1,6 @@
 import { Request } from 'express'
 import { ResponseEntity } from '../interfaces/response-entity.interface'
-import { YtdlService } from '../services/ytdl.service'
+import YtdlService from '../services/ytdl.service'
 
 export class YtdlController {
     async getInfo(req: Request, res: ResponseEntity) {
@@ -9,13 +9,11 @@ export class YtdlController {
             if (!req.body.url) {
                 throw new Error('Url is required')
             }
-            const ytdlService = new YtdlService()
-            const info = await ytdlService.getInfo(req.body.url)
-            console.log('this is info => ', info)
+            const info = await YtdlService.getInfo(req.body.url)
 
             res.status(200).json({
                 status: 200,
-                message: 'Success',
+                message: 'Se obtuvo la información exitosamente',
                 data: info,
             })
         } catch (error) {
