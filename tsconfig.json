@@ -1,0 +1,22 @@
+{
+    "target": "es2016",
+    "baseUrl": "./",
+    "paths": {
+        "helpers": ["./src/helpers/*"],
+        "services": ["./src/services/*"],
+        "routes": ["./src/routes/*"],
+        "controllers": ["./src/controllers/*"],
+        "interfaces": ["./src/interfaces/*"],
+        "root": ["./src/*"]
+    },
+    "skipLibCheck": true,
+    "extends": "@tsconfig/node16/tsconfig.json",
+    "compilerOptions": {},
+    "include": ["src"],
+    "exclude": ["node_modules"],
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "module": "commonjs"
+}
