@@ -1,7 +1,8 @@
 import express from 'express'
-import YtdlController from '../controllers/ytdl.controller'
+import { YtdlController } from '../controllers/ytdl.controller'
 const router = express.Router()
+const instanceYtdlController = new YtdlController()
 
-router.get('/', YtdlController.getInfo)
+router.post('/', instanceYtdlController.getInfo)
 
 export default router
