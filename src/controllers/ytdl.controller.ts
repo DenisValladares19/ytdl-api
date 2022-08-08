@@ -2,7 +2,7 @@ import { Request } from 'express'
 import { ResponseEntity } from '../interfaces/response-entity.interface'
 import YtdlService from '../services/ytdl.service'
 
-export class YtdlController {
+class YtdlController {
     async getInfo(req: Request, res: ResponseEntity) {
         try {
             console.log(req.body)
@@ -26,3 +26,5 @@ export class YtdlController {
         }
     }
 }
+
+export default new YtdlController()
