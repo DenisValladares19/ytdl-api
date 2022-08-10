@@ -9,8 +9,15 @@ class SearchController {
                 throw new Error('Query is required')
             }
             const query: string = req.query.q.toString()
+            const nextPageToken: string = req.query.nextPageToken
+                ? req.query.nextPageToken.toString()
+                : ''
             console.log('query => ', query)
-            const result = await searchService.search(query + ' audio')
+
+            const result = await searchService.search(
+                query + ' audio',
+                nextPageToken
+            )
 
             if (!result) {
                 throw new Error('No se encontraron resultados')
