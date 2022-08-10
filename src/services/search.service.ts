@@ -5,7 +5,7 @@ import Axios from 'axios'
 class SearchService {
     async search(query: string) {
         try {
-            const url = `${env.BASE_URL_YOUTUBE}search?part=snippet&type=video&q=${query}&key=${env.YOUTUBE_API_KEY}`
+            const url = `${env.BASE_URL_YOUTUBE}search?part=snippet&type=video&maxResults=15&q=${query}&key=${env.YOUTUBE_API_KEY}`
 
             const { data } = await Axios.get<ResultSearch>(url)
             return data

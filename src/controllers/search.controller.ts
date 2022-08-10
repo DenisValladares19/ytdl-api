@@ -10,7 +10,7 @@ class SearchController {
             }
             const query: string = req.query.q.toString()
             console.log('query => ', query)
-            const result = await searchService.search(query)
+            const result = await searchService.search(query + ' audio')
 
             if (!result) {
                 throw new Error('No se encontraron resultados')
